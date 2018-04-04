@@ -1,7 +1,25 @@
-let hoursWorked = prompt("Total hours worked:");
-let payRate = prompt("Pay rate:")
-let grossPay;
+function calculateGrossPay(form){
 
-grossPay = hoursWorked * payRate;
+	let hoursWorked = Number(form.hoursWorked.value);
+	let payRate = Number(form.payRate.value);
+	let grossPay;
+	
+	//if(hoursWorked !== NaN && payRate !== NaN){
+	if(isNumber(hoursWorked) && isNumber(payRate)){
+		grossPay = hoursWorked * payRate;
+		alert("Total Gross Pay $" + grossPay.toFixed(2));
+	} else {
+		grossPay = NaN;
+		alert("Invalid input provided, check the inputs are both numbers and try again.")
+	}
+	return grossPay;
 
-console.log('Total Gross Pay $' + grossPay.toFixed(2))
+}
+
+function isNumber(number){
+	if(typeof number === Number && number !== NaN){
+		return true;
+	} else {
+		return false;
+	}
+}
