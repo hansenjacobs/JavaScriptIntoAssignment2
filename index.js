@@ -8,6 +8,7 @@ function calculateGrossPay(form){
 	if(isNumber(hoursWorked) && isNumber(payRate)){
 		grossPay = hoursWorked * payRate;
 		alert("Total Gross Pay $" + grossPay.toFixed(2));
+		form.reset();
 	} else {
 		grossPay = NaN;
 		alert("Invalid input provided, check the inputs are both numbers and try again.")
