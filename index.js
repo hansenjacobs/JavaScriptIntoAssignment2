@@ -7,6 +7,9 @@ function calculateGrossPay(form){
 	//if(hoursWorked !== NaN && payRate !== NaN){
 	if(isNumber(hoursWorked) && isNumber(payRate)){
 		grossPay = hoursWorked * payRate;
+		if(hoursWorked > 40){
+			grossPay = grossPay + ((hoursWorked - 40) * (1.5* payRate))
+		}
 		alert("Total Gross Pay $" + grossPay.toFixed(2));
 		form.reset();
 	} else {
