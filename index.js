@@ -16,10 +16,13 @@ function calculateGrossPay(form){
 
 }
 
-function isNumber(number){
-	if(typeof number === Number && number !== NaN){
+function isNumber(num){
+	debugger
+	if(typeof num === 'number' && num === num){
+	//NaN is the only js value that is not equal to itself
+	//http://adripofjavascript.com/blog/drips/the-problem-with-testing-for-nan-in-javascript.html
 		return true;
-	} else {
+	} else {		
 		return false;
 	}
 }
