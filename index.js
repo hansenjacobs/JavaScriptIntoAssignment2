@@ -1,3 +1,6 @@
+"use strict";
+
+
 function calculateGrossPay(form){
 
 	let hoursWorked = Number(form.hoursWorked.value);
